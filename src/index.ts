@@ -4,7 +4,7 @@ import { Hono } from 'hono'
 const app = new Hono()
 
 app.get('/', (c) => {
-  return c.text('Hello Hono!')
+  return c.text('Tutorial Dev Containers VS Code!')
 })
 
 const port = 3000

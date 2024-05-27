@@ -1,8 +1,8 @@
 {
     "name": "node-app",
-    "dockerComposeFile": "docker-compose.yaml",
-    "service": "app",
-    "forwardPorts": [ "app:3000" ],   
+    "image": "docker.io/node:22",
+    "containerUser": "node",
+    "forwardPorts": [ 3000 ],   
     "workspaceFolder": "/app",
     "workspaceMount": "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached",
     "customizations": {
