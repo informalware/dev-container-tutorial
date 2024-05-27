@@ -1,0 +1,24 @@
+services:
+  app:
+    image: node:22
+    container_name: app
+    environment:
+      NODE_ENV: development
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    command: tail -f /dev/null
+
+  db:
+    image: postgres:16
+    container_name: db
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

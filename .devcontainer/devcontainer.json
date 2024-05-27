@@ -1,0 +1,17 @@
+{
+    "name": "node-app",
+    "dockerComposeFile": "docker-compose.yaml",
+    "service": "app",
+    "forwardPorts": [ "app:3000" ],   
+    "workspaceFolder": "/app",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode"
+            ]
+        }
+    },
+    "postCreateCommand": "bash -i -c 'cd /app && npm install'"
+}
